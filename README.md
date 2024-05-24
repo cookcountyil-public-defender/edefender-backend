@@ -19,17 +19,17 @@
     
 }}%%
 erDiagram
-    tCase ||--|| tSubCase: "case_id"
-    tCase ||--|| tCaseAssignment: "case_id"
-    tCaseAssignment ||--|| tPerson: "person_id"
     tSpecialStatus ||--|| tCase: "case_id"
-    tPerson ||--|| tParty: "person_id"
-    tCase ||--|| tParty: "case_id"
-    tSubCase ||--|| tParty: "subcase_id"
-    tWarrant ||--|| tParty: "associatedparty_id"
-    tCharge ||--|| tParty: "associatedparty_id"
-    tPlea ||--|| tCharge: "associatedcharge_id"
-    tSentence ||--|| tCharge: "associatedcharge_id"
+    tCase ||--|{ tCaseAssignment: "case_id"
+    tCaseAssignment }|--|| tPerson: "person_id"        
+    tCase ||--|{ tSubCase: "case_id"
+    tPerson ||--|{ tParty: "person_id"
+    tCase }|--|{ tParty: "case_id"
+    tSubCase }|--|{ tParty: "subcase_id"
+    tWarrant }o--|| tParty: "associatedparty_id=party_id"
+    tCharge }|--|| tParty: "associatedparty_id=party_id"
+    tPlea |o--|| tCharge: "associatedcharge_id=charge_id"
+    tSentence ||--|| tCharge: "associatedcharge_id=charge_id"
 
     tCase { 
         float case_id ""
