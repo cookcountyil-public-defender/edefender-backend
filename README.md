@@ -1,8 +1,8 @@
 
-## eDefender Database
+# eDefender Database
 
 
-### Entity-Relationship Diagram
+## Entity-Relationship Diagram
 ```mermaid
 
 %%{init: {
