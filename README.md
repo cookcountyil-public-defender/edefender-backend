@@ -9,7 +9,7 @@
     "[id^=entity-tSpecialStatus] .er.entityBox { fill: #F9F871;} ",
     "[id^=entity-tCase] .er.entityBox { fill: #FF9671;} ",
     "[id^=entity-tPerson] .er.entityBox { fill: #FFD15F;} ",
-    "[id^=entity-tCharge] .er.entityBox { fill: #C7FCEC;} ",
+    "[id^=entity-tCharge] .er.entityBox { fill: #D3D4BE;} ",
     "[id^=entity-tParty] .er.entityBox { fill: #00C9A7;} ",
     "[id^=entity-tSubCase] .er.entityBox { fill: #4ABAFF;} ",
     "[id^=entity-tPlea] .er.entityBox { fill: #f8f1e1;} ",
@@ -30,21 +30,22 @@ erDiagram
     tCharge ||--|| tParty: "associatedparty_id"
     tPlea ||--|| tCharge: "associatedcharge_id"
     tSentence ||--|| tCharge: "associatedcharge_id"
+
     tCase { 
-        string case_id ""
+        float case_id ""
         string sourcecasenumber ""
         string casename ""
-        integer casenumber ""
+        string casenumber ""
         string casesubtype ""
         string casetype ""
         date dispositiondate ""
         string dispositiontype ""
         string location ""
         date originalfileddate ""
-        integer referencenumber ""
+        string referencenumber ""
         string status ""
         date statusdate ""
-        string cf_convertcase ""
+        integer cf_convertcase ""
         date cf_nexteventdate ""
         string casesubtype_label ""
         string casetype_label ""
@@ -53,8 +54,8 @@ erDiagram
         string status_label ""
     }
     tSubCase { 
-        string subcase_id ""
-        string case_id ""
+        float subcase_id ""
+        float case_id ""
         string status ""
         date statusdate ""
         string subcasetype ""
@@ -62,41 +63,41 @@ erDiagram
         string subcasetype_label ""
     }
     tCaseAssignment	{ 
-        string caseassignment_id ""
-        string case_id ""
-        string person_id ""
+        float caseassignment_id ""
+        float case_id ""
+        float person_id ""
         string assignmentrole ""
         date dateassigned ""
-        string dateremoved ""
+        date dateremoved ""
         string status ""
         string assignmentrole_label ""
         string status_label ""
     }
     tSpecialStatus { 
-        string specialstatus_id ""
-        string case_id ""
-        date enddate ""
-        date startdate ""
+        float specialstatus_id ""
+        float case_id ""
+        float enddate ""
+        float startdate ""
         string status ""
         string cf_division ""
         string status_label ""
         string cf_division_label ""
     }
     tPerson	{ 
-        string person_id ""
-        string personidentifier_id ""
+        float person_id ""
+        float personidentifier_id ""
         string firstname ""
         string lastname ""
         string middlename ""
         string persontype ""
-        string cf_noirnumberavailable ""
+        integer cf_noirnumberavailable ""
         string persontype_label ""
     }
     tParty { 
-        integer party_id ""
-        string case_id ""
-        string person_id ""
-        string subcase_id ""
+        float party_id ""
+        float case_id ""
+        float person_id ""
+        float subcase_id ""
         string partysubtype ""
         string partytype ""
         string status ""
@@ -107,17 +108,17 @@ erDiagram
         string nonmonapplication_label ""
     }
     tWarrant { 
-        integer warrant_id ""
-        string associatedparty_id ""
+        float warrant_id ""
+        float associatedparty_id ""
         string status ""
-        integer trackingnumber ""
+        string trackingnumber ""
         string warranttype ""
         string warranttype_label ""
     }
     tCharge { 
-        string charge_id ""
-        string associatedparty_id ""
-        string statute_id ""
+        float charge_id ""
+        float associatedparty_id ""
+        float statute_id ""
         date chargedate ""
         string chargenumber ""
         string chargetype ""
@@ -125,15 +126,15 @@ erDiagram
         string dispositiontype ""
         string eligible ""
         string status ""
-        integer ticketnumber ""
+        string ticketnumber ""
         string chargetype_label ""
         string dispositiontype_label ""
         string eligible_label ""
         string status_label ""
     }
     tPlea {
-        string plea_id ""
-        string associatedcharge_id ""
+        float plea_id ""
+        float associatedcharge_id ""
         date pleadate ""
         string pleatype ""
         string status ""
@@ -142,13 +143,13 @@ erDiagram
         string status_label ""
     }
     tSentence { 
-        string sentence_id ""
-        string associatedcharge_id ""
-        string length ""
+        float sentence_id ""
+        float associatedcharge_id ""
+        float length ""
         string lengthunit ""
         date sentencedate ""
         string sentencetype ""
-        string length2 ""
+        float length2 ""
         string lengthunit2 ""
         string lengthunit_label ""
         string sentencetype_label ""
