@@ -19,7 +19,8 @@
     "[id^=entity-tSubCase] .er.entityBox { fill: #4ABAFF;} ",
     "[id^=entity-tPlea] .er.entityBox { fill: #f8f1e1;} ",
     "[id^=entity-tWarrant] .er.entityBox { fill: #C7FCEC;} ",
-    "[id^=entity-tSentence] .er.entityBox { fill: #f8f1e1;} "
+    "[id^=entity-tSentence] .er.entityBox { fill: #f8f1e1;} ",
+    "[id] .er.entityLabel { font-weight: bold; } "
     ]
     
 }}%%
